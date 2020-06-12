@@ -1,0 +1,16 @@
+= Cheatsheets
+
+[[DefaultEntity]]
+== DefaultEntity
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[data]]`@data`|`String`|-
+|[[id]]`@id`|`Number (Long)`|-
+|[[parentId]]`@parentId`|`Number (Long)`|-
+|[[subEntities]]`@subEntities`|`Array of link:dataobjects.html#DefaultEntity[DefaultEntity]`|-
+|===
+

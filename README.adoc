@@ -1,0 +1,58 @@
+
+A small Java project that implements a simple REST API to:
+
+- list Entity entries
+- send an Entity (to root, or attached to another entity)
+- read an Entity
+
+Uses Maven + Spring build and run
+Uses Vert.X to implement the server+logic
+Uses H2, an in-memory database, as no persistence is required.
+
+To try the API, execute this command in a terminal:
+
+----
+mvn clean spring-boot:run
+----
+
+By default, there are 2 entities added. One root entity, which has a child subentity
+
+You should now be able to see them:
+
+----
+curl http://localhost:8080/entities
+
+----
+
+
+Then add a new entity to the database, which has the parent entity with id=2:
+----
+curl -X POST -d "{ \"parentId\" : \"2\", \"data\" : { \"key\" : \"value\"} }"  http://localhost:8080/entity 
+
+----
+
+
+Then add a new entity to the database, which will be the root entity. Do not add any parent ID in the request body. Or add an unexisting one
+----
+curl -X POST -d "{ \"data\" : { \"key\" : \"value\"} }"  http://localhost:8080/entity 
+----
+or
+----
+curl -X POST -d "{ \"parentId\" : \"unexisting\", \"data\" : { \"key\" : \"value\"} }"  http://localhost:8080/entity 
+----
+
+Then retrieve an existing entity from the database
+----
+curl http://localhost:8080/entity?id=1
+----
+
+
+
+
+
+
+
+
+
+
+
