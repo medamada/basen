@@ -6,7 +6,7 @@
 
     <groupId>com.medamada.github</groupId>
     <artifactId>basen-vertx-app</artifactId>
-    <version>3.9.1</version>
+    <version>3.9.4</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
